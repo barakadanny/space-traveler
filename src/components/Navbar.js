@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 function Header() {
   const linkStyle = {
-    textDecoration: "none",
-    color: "#121212",
+    textDecoration: 'none',
+    color: '#121212',
   };
   return (
     <header>
       <nav>
-        <img className="logo" src={process.env.PUBLIC_URL + "planet.png"} />
-        <h1>Space Traveler's Hub</h1>
+        <img className="logo" alt="logo" src={`${process.env.PUBLIC_URL}planet.png`} />
+        <h1>Space Traveler&apos;s Hub</h1>
       </nav>
       <ul className="nav-menu">
         <li>

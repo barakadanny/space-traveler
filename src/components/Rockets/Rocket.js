@@ -1,5 +1,5 @@
-import React from "react";
-import "./Rocket.css";
+import React from 'react';
+import './Rocket.css';
 
 function Rocket() {
   return (
@@ -17,7 +17,7 @@ function Rocket() {
             launch vehicle in history, capable of delivering 13,450 kg to low
             Earth orbit.
           </p>
-          <button className="btn">Reserve Rocket</button>
+          <button type="button" className="btn">Reserve Rocket</button>
         </div>
       </div>
     </div>

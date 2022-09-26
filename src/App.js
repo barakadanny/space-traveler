@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import Header from "./components/Navbar";
-import Home from "./components/Rockets/Home";
-import Missions from "./components/Missions/Missions";
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Navbar';
+import Home from './components/Rockets/Home';
+import Missions from './components/Missions/Missions';
 
 function App() {
   return (

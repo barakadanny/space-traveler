@@ -1,11 +1,10 @@
-import React from "react";
-import RockectsList from "./RocketsList";
-const Home = () => {
-  return (
-    <main>
-      <RockectsList />
-    </main>
-  );
-};
+import React from 'react';
+import RockectsList from './RocketsList';
+
+const Home = () => (
+  <main>
+    <RockectsList />
+  </main>
+);
 
 export default Home;

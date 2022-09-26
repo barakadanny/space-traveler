@@ -1,62 +1,53 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Space traveler
 
-# Project Name
+This is space traveler, a web application that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-> Description the project.
+## Technologies Used
 
+- React js
+- React Router
+- React Hooks
+- React Context
+- EsLint
+- Prettier
+- StyleLint
+- Jsx
+- CSS
+- Jest
+- React Testing Library
 
-## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
+### Getting started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+- Clone the project unto your local machine
+- Open the project with your code editor
+- Run `npm install` to install all the dependencies
+- Run `npm start` to start the development server
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Setup
+NOTE: In case of any changes make sure to check for Linters Errors.
 
-### Install
+- Run `npx eslint .` For Eslint to check all possible JavaScript errors
+- Run `npx stylelint "**/*.{css,scss}"` For Stylelint to check all possible CSS errors
 
-### Usage
+## Author
 
-### Run tests
+👤 **Baraka Danny (Me)**
 
-### Deployment
+- GitHub: [@barakadan](https://github.com/barakadanny)
+- LinkedIn: [danny baraka](https://www.linkedin.com/in/danny-baraka-589156169/)
 
+👤 **Gordon Otieno**
 
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@GordonOtieno](https://github.com/GordonOtieno)
+- LinkedIn: [Gordon Otieno](https://www.linkedin.com/in/gordon-otieno-612b98184/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/barakadanny/space-traveler/issues).
 
 ## Show your support
 

@@ -1,13 +1,12 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
-// import { FaUser } from "react-icons/fa";
 
 function Header() {
-  //   const linkStyle = {
-  //     textDecoration: "none",
-  //     color: "#121212",
-  //   };
+  const linkStyle = {
+    textDecoration: "none",
+    color: "#121212",
+  };
   return (
     <header>
       <nav>
@@ -16,16 +15,14 @@ function Header() {
       </nav>
       <ul className="nav-menu">
         <li>
-          {/* <Link style={linkStyle} to="/">
-              BOOKS
-            </Link> */}
-          Rockets
+          <Link style={linkStyle} to="/">
+            Rockets
+          </Link>
         </li>
         <li>
-          {/* <Link style={linkStyle} to="/Categories">
-              CATEGORIES
-            </Link> */}
-          Missions
+          <Link style={linkStyle} to="/missions">
+            Missions
+          </Link>
         </li>
       </ul>
     </header>

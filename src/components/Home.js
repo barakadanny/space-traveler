@@ -1,7 +1,9 @@
+import React from "react";
+import RockectsList from "./RocketsList";
 const Home = () => {
   return (
     <main>
-      <h1>Home</h1>
+      <RockectsList />
     </main>
   );
 };

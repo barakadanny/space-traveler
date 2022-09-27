@@ -1,55 +1,73 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { loadMissions } from "../../store/missions/missions";
-import "./Mission.css";
-import Mission from "./Mission";
+import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Table, Badge, Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { joinMission, leaveMission, fetchMissions } from '../../store/misions/missions';
 
-function Missions() {
-  const missions = useSelector((state) => state.mission);
+const Missions = () => {
   const dispatch = useDispatch();
-
+  const missions = useSelector((state) => state.mission);
+  console.log(missions);
+  const availableMisions = missions.length;
   useEffect(() => {
-    dispatch(loadMissions());
-  }, [missions, dispatch]);
+    if (!availableMisions) {
+      dispatch(fetchMissions);
+    }
+  }, [dispatch, availableMisions]);
+
+  const handleJoin = (id) => dispatch(joinMission(id));
+  const handleLeave = (id) => dispatch(leaveMission(id));
 
   return (
-    <table className="missions-container">
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>-</th>
-        </tr>
-      </thead>
-      <tbody>
-        {missions.map((mission) => (
-          <Mission
-            key={mission.mission_id}
-            index={mission.mission_id}
-            title={mission.mission_name}
-            description={mission.description}
-          />
-        ))}
-      </tbody>
-
-      {/* <tr>
-        <td>Telstar</td>
-        <td>
-          The Missions section displays a list of current missions along with
-          their brief description and participation status. There is also a
-          button next to each mission that allows users to join the selected
-          mission or leave the mission the user joined earlier.
-        </td>
-        <td>
-          <ActionButton action="ACTIVE MEMBER" />
-        </td>
-        <td>
-          <ActionButton action="Leave Mission" />
-        </td>
-      </tr> */}
-    </table>
+    <div className="container mt-4">
+      <Table striped bordered hover mt-5>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>{'  '}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map(({
+            id, name, desc, reserved,
+          }) => (
+            <tr key={id}>
+              <td><p className="fw-bold">{name}</p></td>
+              <td><p>{desc}</p></td>
+              <td className="align-middle">
+                {reserved && <Badge bg="info">Active Member</Badge>}
+                {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
+              </td>
+              <td className="col-2 align-middle text-center">
+                {reserved
+                  && (
+                  <Button
+                    size="sm"
+                    variant="outline-danger"
+                    onClick={() => handleLeave(id)}
+                  >
+                    Leave Mission
+                  </Button>
+                  )}
+                {!reserved
+                  && (
+                  <Button
+                    size="sm"
+                    variant="outline-secondary"
+                    onClick={() => handleJoin(id)}
+                  >
+                    Join Mission
+                  </Button>
+                  )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   );
-}
+};
 
 export default Missions;

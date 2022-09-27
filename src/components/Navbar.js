@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header() {
   const linkStyle = {
@@ -9,12 +10,15 @@ function Header() {
   };
   return (
     <header>
-      <nav>
-        <img className="logo" alt="logo" src={`${process.env.PUBLIC_URL}planet.png`} />
-        <h1>Space Traveler&apos;s Hub</h1>
+      <nav className="navbar">
+        <div className="navbar-brand d-flex">
+          <img className="logo" alt="logo" src={`${process.env.PUBLIC_URL}planet.png`} />
+          <h1 className="ms-3">Space Traveler&apos;s Hub</h1>
+        </div>
+
       </nav>
-      <ul className="nav-menu">
-        <li>
+      <ul className="navbar">
+        <li className="nav-item">
           <Link style={linkStyle} to="/">
             Rockets
           </Link>

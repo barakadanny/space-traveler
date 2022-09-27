@@ -1,17 +1,33 @@
 import React from "react";
 import "./Mission.css";
 import Mission from "./Mission";
+import { useSelector } from "react-redux";
 
 function Missions() {
+  const missions = useSelector((state) => state.mission);
+
   return (
     <table className="missions-container">
-      <tr>
-        <th>Mission</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>-</th>
-      </tr>
-      <Mission />
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>-</th>
+        </tr>
+      </thead>
+      <tbody>
+        {missions.map((mission) => (
+          <Mission
+            key={mission.mission_id}
+            index={mission.mission_id}
+            title={mission.mission_name}
+            description={mission.description}
+          />
+          // <Mission />
+        ))}
+      </tbody>
+
       {/* <tr>
         <td>Telstar</td>
         <td>

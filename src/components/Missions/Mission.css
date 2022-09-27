@@ -13,8 +13,6 @@
 
 .missions-container tr:nth-child(even) { background-color: #f2f2f2; }
 
-.missions-container tr:hover { background-color: #ddd; }
-
 .missions-container th {
   padding-top: 12px;
   padding-bottom: 12px;

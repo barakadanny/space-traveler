@@ -1,6 +1,6 @@
-import React from 'react';
-import './Mission.css';
-import ActionButton from './ActionButtons';
+import React from "react";
+import "./Mission.css";
+import Mission from "./Mission";
 
 function Missions() {
   return (
@@ -11,35 +11,22 @@ function Missions() {
         <th>Status</th>
         <th>-</th>
       </tr>
-      <tr>
-        <td>Thaicom</td>
-        <td>
-          The Missions section displays a list of current missions along with their
-          brief description and participation status. There is also a button next to each
-          mission that allows users to join the selected mission or leave the
-          mission the user joined earlier.
-        </td>
-        <td className="reg-status"><ActionButton action="NOT A MEMBER" /></td>
-        <td>
-          {' '}
-          <ActionButton action="Join Mission" />
-        </td>
-      </tr>
-      <tr>
+      <Mission />
+      {/* <tr>
         <td>Telstar</td>
         <td>
-          The Missions section displays a list of current missions along with their
-          brief description and participation status. There is also a button next to each
-          mission that allows users to join the selected mission or
-          leave the mission the user joined earlier.
+          The Missions section displays a list of current missions along with
+          their brief description and participation status. There is also a
+          button next to each mission that allows users to join the selected
+          mission or leave the mission the user joined earlier.
         </td>
-        <td><ActionButton action="ACTIVE MEMBER" /></td>
         <td>
-          {' '}
+          <ActionButton action="ACTIVE MEMBER" />
+        </td>
+        <td>
           <ActionButton action="Leave Mission" />
         </td>
-      </tr>
-
+      </tr> */}
     </table>
   );
 }

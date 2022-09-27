@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { loadMissions } from "../../store/missions/missions";
 import "./Mission.css";
 import Mission from "./Mission";
-import { useSelector } from "react-redux";
 
 function Missions() {
   const missions = useSelector((state) => state.mission);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadMissions());
+  }, [missions, dispatch]);
+
+  // {
+  //   missions.map((mission) =>
+  //     console.log(mission.mission_name, mission.description)
+  //   );
+  // }
 
   return (
     <table className="missions-container">

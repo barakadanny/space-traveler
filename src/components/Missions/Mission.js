@@ -4,7 +4,10 @@ import { useDispatch } from "react-redux";
 
 function Mission(props) {
   const { title, description, index } = props;
+
   const dispatch = useDispatch();
+
+  //   console.log(title);
   return (
     <tr>
       <td>{title}</td>

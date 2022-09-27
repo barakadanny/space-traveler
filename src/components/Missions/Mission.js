@@ -7,7 +7,6 @@ function Mission(props) {
 
   const dispatch = useDispatch();
 
-  //   console.log(title);
   return (
     <tr>
       <td>{title}</td>

@@ -12,12 +12,6 @@ function Missions() {
     dispatch(loadMissions());
   }, [missions, dispatch]);
 
-  // {
-  //   missions.map((mission) =>
-  //     console.log(mission.mission_name, mission.description)
-  //   );
-  // }
-
   return (
     <table className="missions-container">
       <thead>
@@ -36,7 +30,6 @@ function Missions() {
             title={mission.mission_name}
             description={mission.description}
           />
-          // <Mission />
         ))}
       </tbody>
 

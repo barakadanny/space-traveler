@@ -7,8 +7,8 @@ import { joinMission, leaveMission, fetchMissions } from '../../store/misions/mi
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.mission);
-  console.log(missions);
   const availableMisions = missions.length;
+  console.log(availableMisions);
   useEffect(() => {
     if (!availableMisions) {
       dispatch(fetchMissions);
@@ -20,7 +20,7 @@ const Missions = () => {
 
   return (
     <div className="container mt-4">
-      <Table striped bordered hover mt-5>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Mission</th>

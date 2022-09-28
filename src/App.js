@@ -6,7 +6,6 @@ import Home from './components/Rockets/Home';
 import Missions from './components/Missions/Missions';
 
 function App() {
-  console.log(store);
   return (
     <Provider store={store}>
       <div className="container-fluid">

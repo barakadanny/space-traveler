@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { loadRockets } from "../../store/rockets/rockets";
+
+import { fetchRockets } from "../../store/rockets/rockets";
 import Rocket from "./Rocket";
 
 function RockectsList() {
@@ -9,14 +9,17 @@ function RockectsList() {
   const rockets = useSelector((state) => state.rocket);
 
   useEffect(() => {
-    dispatch(loadRockets());
-  }, [rockets, dispatch]);
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
+      console.log("there are no rockets");
+    }
+  }, []);
 
   return (
     <div className="rockets-list">
-      {rockets.map((rocket) => (
-        <Rocket />
-      ))}
+      {/* {rockets.map((rocket) => (
+        ))} */}
+      <Rocket />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import store from './store/configStore';
 import Header from './components/Navbar';
 import Home from './components/Rockets/Home';
 import Missions from './components/Missions/Missions';
+import Profile from './components/profile/Profile';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/missions" element={<Missions />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>

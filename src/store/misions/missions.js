@@ -1,7 +1,7 @@
 const BASE_URL = "https://api.spacexdata.com/v3/missions";
-const LOAD_MISSIONS = "missions/load";
-const JOIN_MISSION = "sissions/join";
-const LEAVE_MISSION = "sissions/leave";
+const LOAD_MISSIONS = "missions/LOAD_MISSIONS";
+const JOIN_MISSION = "sissions/JOIN_MISSION";
+const LEAVE_MISSION = "sissions/LEAVE_MISSION";
 
 const displayMissions = (payload) => ({
   type: LOAD_MISSIONS,

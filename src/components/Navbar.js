@@ -28,6 +28,11 @@ function Header() {
             Missions
           </Link>
         </li>
+        <li>
+          <Link style={linkStyle} to="/profile">
+            Profile
+          </Link>
+        </li>
       </ul>
     </header>
   );

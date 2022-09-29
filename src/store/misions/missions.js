@@ -1,7 +1,7 @@
-const BASE_URL = 'https://api.spacexdata.com/v3/missions';
-const LOAD_MISSIONS = 'missions/load';
-const JOIN_MISSION = 'sissions/join';
-const LEAVE_MISSION = 'sissions/leave';
+const BASE_URL = "https://api.spacexdata.com/v3/missions";
+const LOAD_MISSIONS = "missions/load";
+const JOIN_MISSION = "sissions/join";
+const LEAVE_MISSION = "sissions/leave";
 
 const displayMissions = (payload) => ({
   type: LOAD_MISSIONS,
@@ -22,12 +22,15 @@ export const fetchMissions = async (dispatch) => {
   const res = await fetch(BASE_URL);
   const missions = await res.json();
   console.log(missions);
-  dispatch(displayMissions(missions.map((mission) => ({
-    id: mission.mission_id,
-    name: mission.mission_name,
-    desc: mission.description,
-
-  }))));
+  dispatch(
+    displayMissions(
+      missions.map((mission) => ({
+        id: mission.mission_id,
+        name: mission.mission_name,
+        desc: mission.description,
+      }))
+    )
+  );
 };
 
 const missionReducer = (state = [], action) => {

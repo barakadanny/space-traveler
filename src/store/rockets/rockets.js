@@ -1,36 +1,70 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-
-const LOAD_ROCKETS = "rockets/load";
-const RESERVE_ROCKET = "rockets/reserve";
-const CANCEL_ROCKET = "rockets/cancel";
 const BASE_URL = "https://api.spacexdata.com/v3/rockets";
+const LOAD_ROCKETS = "rockets/LOAD_ROCKETS";
+const BOOK_ROCKET = "rockets/BOOK_ROCKET";
+const CANCEL_BOOKING = "rockets/CANCEL_BOOKING";
 
-// const displayRockets = (payload) => ({
-//   type: LOAD_ROCKETS,
-//   payload,
-// });
+const loadRockets = (payload) => ({
+  type: LOAD_ROCKETS,
+  payload,
+});
+
+export const bookRocket = (id) => ({
+  type: BOOK_ROCKET,
+  id,
+});
+
+export const cancelBooking = (id) => ({
+  type: CANCEL_BOOKING,
+  id,
+});
+
+// thunk reducer
+export const fetchRockets = async (dispatch) => {
+  const response = await fetch(BASE_URL);
+  const rockets = await response.json();
+
+  dispatch(
+    loadRockets(
+      rockets.map((rocket) => ({
+        id: rocket.rocket_id,
+        name: rocket.rocket_name,
+        type: rocket.rocket_type,
+        description: rocket.description,
+        images: rocket.flickr_images,
+      }))
+    )
+  );
+};
 
 const rocketReducer = (state = [], action) => {
   switch (action.type) {
     case LOAD_ROCKETS:
       return action.payload;
+    case BOOK_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) {
+          return rocket;
+        }
 
+        return {
+          ...rocket,
+          reserved: true,
+        };
+      });
+    case CANCEL_BOOKING:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) {
+          return rocket;
+        }
+
+        return {
+          ...rocket,
+          reserved: false,
+        };
+      });
     default:
       return state;
   }
 };
-
-export const fetchRockets = createAsyncThunk(LOAD_ROCKETS, async () => {
-  const res = await fetch(BASE_URL);
-  const data = await res.json();
-  // console.log("check here danny:", data);
-
-  const rockets = Object.keys(data).map((key) => ({
-    ...data[key][0],
-    rocket_id: key,
-  }));
-  return rockets;
-  console.log("check here danny:", rockets);
-});
 
 export default rocketReducer;

@@ -23,11 +23,11 @@ const Rockets = () => {
   const handleCancellation = (id) => dispatch(cancelBooking(id));
 
   return (
-    <div className="container mt-3">
+    <div className="">
       {rockets.map(({ id, name, description, images, reserved }) => (
-        <div key={id} className="mb-4 d-flex">
-          <div className="image-container m-5">
-            <img src={images[0]} className="thumbnail" alt="rocket thumbnail" />
+        <div key={id} className="single-rocket">
+          <div className="img-container">
+            <img src={images[0]} alt="rocket" />
           </div>
           <div>
             <h3>{name}</h3>

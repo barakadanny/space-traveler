@@ -8,18 +8,17 @@ function RockectsList() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rocket);
 
+  console.log("here");
+
   useEffect(() => {
-    if (rockets.length === 0) {
-      dispatch(fetchRockets());
-      console.log("there are no rockets");
-    }
-  }, []);
+    dispatch(fetchRockets());
+  }, [rockets, dispatch]);
 
   return (
     <div className="rockets-list">
-      {/* {rockets.map((rocket) => (
-        ))} */}
-      <Rocket />
+      {rockets.map((rocket) => (
+        <Rocket />
+      ))}
     </div>
   );
 }

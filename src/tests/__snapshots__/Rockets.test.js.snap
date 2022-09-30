@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets should render with given state from Redux store 1`] = `
+<div
+  className=""
+>
+  <div
+    className="single-rocket"
+  >
+    <div
+      className="img-container"
+    >
+      <img
+        alt="rocket"
+      />
+    </div>
+    <div>
+      <h3>
+        Falcon 1
+      </h3>
+      <p>
+        First successful orbital launch vehicle in history, capable of delivering 13,450 kg to low Earth orbit. First successful orbital launch vehicle in history, capable of delivering 13,450 kg to low Earth orbit.
+      </p>
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve rocket
+      </button>
+    </div>
+  </div>
+  <div
+    className="single-rocket"
+  >
+    <div
+      className="img-container"
+    >
+      <img
+        alt="rocket"
+      />
+    </div>
+    <div>
+      <h3>
+        Falcon 9
+      </h3>
+      <p>
+        First successful orbital launch vehicle in history, capable of delivering 13,450 kg to low Earth orbit. First successful orbital launch vehicle in history, capable of delivering 13,450 kg to low Earth orbit.
+      </p>
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve rocket
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // redux actions
 const LOAD_MISSIONS = 'missions/LOAD_MISSIONS';
-const STATUS_MISSIONS = 'missions/STATUS_MISSIONS';
 const JOIN_MISSION = 'missions/JOIN_MISSION';
 const LEAVE_MISSION = 'missions/LEAVE_MISSION';
 

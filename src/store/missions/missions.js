@@ -1,17 +1,16 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // redux actions
-const LOAD_MISSIONS = "missions/LOAD_MISSIONS";
-const STATUS_MISSIONS = "missions/STATUS_MISSIONS";
-const JOIN_MISSION = "missions/JOIN_MISSION";
-const LEAVE_MISSION = "missions/LEAVE_MISSION";
+const LOAD_MISSIONS = 'missions/LOAD_MISSIONS';
+const JOIN_MISSION = 'missions/JOIN_MISSION';
+const LEAVE_MISSION = 'missions/LEAVE_MISSION';
 
 const initialState = [];
 
 // redux reducer
 export default function missionReducer(state = initialState, action) {
   switch (action.type) {
-    case "missions/LOAD_MISSIONS/fulfilled":
+    case 'missions/LOAD_MISSIONS/fulfilled':
       // return [...action.payload];
       return action.payload;
     case JOIN_MISSION:
@@ -35,7 +34,7 @@ export default function missionReducer(state = initialState, action) {
 
 // redux actions
 export const loadMissions = createAsyncThunk(LOAD_MISSIONS, async () => {
-  const response = await fetch("https://api.spacexdata.com/v3/missions");
+  const response = await fetch('https://api.spacexdata.com/v3/missions');
   const data = await response.json();
   const missions = Object.keys(data).map((key) => ({
     ...data[key][0],

@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Rocket.css';
 
-const Rocket = (props) => (
+const Rocket = () => (
   <div className="d-flex flex-column">
     <div className="d-flex justify-content-center my-5">
       <div className="img-container">

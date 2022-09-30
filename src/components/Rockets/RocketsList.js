@@ -1,13 +1,13 @@
-import { useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Badge } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Badge } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   bookRocket,
   cancelBooking,
   fetchRockets,
-} from "../../store/rockets/rockets";
-import "./Rocket.css";
+} from '../../store/rockets/rockets';
+import './Rocket.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,9 @@ const Rockets = () => {
 
   return (
     <div className="">
-      {rockets.map(({ id, name, description, images, reserved }) => (
+      {rockets.map(({
+        id, name, description, images, reserved,
+      }) => (
         <div key={id} className="single-rocket">
           <div className="img-container">
             <img src={images[0]} alt="rocket" />
@@ -36,22 +38,22 @@ const Rockets = () => {
               {description}
             </p>
             {reserved && (
-              <button
-                type="button"
-                className="btn btn-outline-secondary"
-                onClick={() => handleCancellation(id)}
-              >
-                Cancel reservation
-              </button>
+            <button
+              type="button"
+              className="btn btn-outline-secondary"
+              onClick={() => handleCancellation(id)}
+            >
+              Cancel reservation
+            </button>
             )}
             {!reserved && (
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => handleBooking(id)}
-              >
-                Reserve rocket
-              </button>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => handleBooking(id)}
+            >
+              Reserve rocket
+            </button>
             )}
           </div>
         </div>

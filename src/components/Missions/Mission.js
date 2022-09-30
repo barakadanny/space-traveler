@@ -1,6 +1,6 @@
-import React from "react";
-import ActionButton from "./ActionButtons";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import ActionButton from './ActionButtons';
 
 function Mission(props) {
   const { title, description, index } = props;

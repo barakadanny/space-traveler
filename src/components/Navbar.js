@@ -1,16 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Navbar.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header() {
   const linkStyle = {
-    textDecoration: "none",
-    color: "#121212",
+    textDecoration: 'none',
+    color: '#121212',
   };
   const activeStyle = {
-    textDecoration: "underline",
-    color: "#0000FF",
+    textDecoration: 'underline',
+    color: '#0000FF',
   };
   return (
     <header>

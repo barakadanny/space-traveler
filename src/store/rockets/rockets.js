@@ -1,7 +1,7 @@
-const BASE_URL = "https://api.spacexdata.com/v3/rockets";
-const LOAD_ROCKETS = "rockets/LOAD_ROCKETS";
-const BOOK_ROCKET = "rockets/BOOK_ROCKET";
-const CANCEL_BOOKING = "rockets/CANCEL_BOOKING";
+const BASE_URL = 'https://api.spacexdata.com/v3/rockets';
+const LOAD_ROCKETS = 'rockets/LOAD_ROCKETS';
+const BOOK_ROCKET = 'rockets/BOOK_ROCKET';
+const CANCEL_BOOKING = 'rockets/CANCEL_BOOKING';
 
 const loadRockets = (payload) => ({
   type: LOAD_ROCKETS,
@@ -31,8 +31,8 @@ export const fetchRockets = async (dispatch) => {
         type: rocket.rocket_type,
         description: rocket.description,
         images: rocket.flickr_images,
-      }))
-    )
+      })),
+    ),
   );
 };
 

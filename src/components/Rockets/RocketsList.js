@@ -29,7 +29,7 @@ const Rockets = () => {
       }) => (
         <div key={id} className="single-rocket">
           <div className="img-container">
-            <img src={images[0]} alt="rocket" />
+            <img src={images} alt="rocket" />
           </div>
           <div>
             <h3>{name}</h3>
